@@ -8,10 +8,16 @@ int main() {
     // Registrar el tiempo antes de los ciclos
     inicio = clock();
 
-    // Tres ciclos for con un millón de iteraciones cada uno
-    for (int i = 0; i < 1000000; i++);
-    for (int i = 0; i < 1000000; i++);
-    for (int i = 0; i < 1000000; i++);
+    // Tres ciclos for con un millón de iteraciones cada uno, mostrando el índice
+    for (int i = 0; i < 1000000; i++) {
+        printf("Iteración: %d\n", i);
+    }
+    for (int i = 0; i < 1000000; i++) {
+        printf("Iteración: %d\n", i);
+    }
+    for (int i = 0; i < 1000000; i++) {
+        printf("Iteración: %d\n", i);
+    }
 
     // Registrar el tiempo después de los ciclos
     fin = clock();

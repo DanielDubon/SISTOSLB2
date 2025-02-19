@@ -16,21 +16,27 @@ int main() {
     if (pid_hijo == 0) { // Código del hijo
         pid_nieto = fork(); // Segundo fork (crea al nieto)
 
-        if (pid_nieto == 0) { // Código del nieto
+        if (pid_nieto == 0) { // Có(digo del nieto
             pid_bisnieto = fork(); // Tercer fork (crea al bisnieto)
 
             if (pid_bisnieto == 0) { // Código del bisnieto
-                for (int i = 0; i < 1000000; i++); // Bucle de un millón de iteraciones
-                return 0; // Termina el bisnieto
+                for (int i = 0; i < 1000000; i++) {
+                    printf("Bisnieto - Iteración: %d\n", i);
+                }
+                return 0;
             } else {
                 wait(NULL); // El nieto espera al bisnieto
-                for (int i = 0; i < 1000000; i++); // El nieto hace su propio bucle
-                return 0; // Termina el nieto
+                for (int i = 0; i < 1000000; i++) {
+                    printf("Nieto - Iteración: %d\n", i);
+                }
+                return 0;
             }
         } else {
             wait(NULL); // El hijo espera al nieto
-            for (int i = 0; i < 1000000; i++); // El hijo hace su propio bucle
-            return 0; // Termina el hijo
+            for (int i = 0; i < 1000000; i++) {
+                printf("Hijo - Iteración: %d\n", i);
+            }
+            return 0;
         }
     } else {
         wait(NULL); // El padre espera al hijo
